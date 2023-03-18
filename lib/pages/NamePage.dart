@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'itemAddPage.dart';
+import 'printPage.dart';
+import '../module/billdetails.dart';
 
 class NamePage extends StatefulWidget {
   State<StatefulWidget> createState() {
@@ -10,6 +12,13 @@ class NamePage extends StatefulWidget {
 
 class _NamePage extends State<NamePage> {
   TextEditingController dateInput = TextEditingController();
+  billdetails bill = billdetails();
+  final ButtonStyle style = ElevatedButton.styleFrom(
+    textStyle: const TextStyle(
+      fontSize: 30,
+    ),
+  );
+
   @override
   void initState() {
     dateInput.text = "";
@@ -56,20 +65,30 @@ class _NamePage extends State<NamePage> {
                     if (pickedDate != null) {
                       String formateDate =
                           DateFormat('dd-MM-yyyy').format(pickedDate);
-                      print(pickedDate);
+                      //print(pickedDate);
                       setState(() {
                         dateInput.text = formateDate;
+                        bill.dateTime = formateDate;
                       });
                     }
                   },
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => itemAddPage()));
-                  },
-                  child: const Text("Next"))
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: SizedBox(
+                  height: 50,
+                  child: ElevatedButton(
+                      style: style,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => itemAddPage()));
+                      },
+                      child: const Text("Next")),
+                ),
+              )
             ],
           ),
         ),
