@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'billModel.dart';
+import '../models/billModel.dart';
 import 'itemAddPage.dart';
 import 'printPage.dart';
-import '../module/billdetails.dart';
+
 
 class NamePage extends StatefulWidget {
   State<StatefulWidget> createState() {

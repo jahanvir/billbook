@@ -1,8 +1,7 @@
-import 'package:billbook/module/billdetails.dart';
-import 'package:billbook/pages/billModel.dart';
+import 'package:billbook/models/billModel.dart';
 import 'package:billbook/pages/printPage.dart';
 import 'package:flutter/material.dart';
-import 'itemModel.dart';
+import '../models/itemModel.dart';
 
 class itemAddPage extends StatefulWidget {
 
