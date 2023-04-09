@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'billModel.dart';
 import 'itemAddPage.dart';
 import 'printPage.dart';
 import '../module/billdetails.dart';
@@ -12,7 +13,8 @@ class NamePage extends StatefulWidget {
 
 class _NamePage extends State<NamePage> {
   TextEditingController dateInput = TextEditingController();
-  billdetails bill = billdetails();
+  TextEditingController nameInput = TextEditingController();
+  billModel bill = billModel();
   final ButtonStyle style = ElevatedButton.styleFrom(
     textStyle: const TextStyle(
       fontSize: 30,
@@ -37,9 +39,10 @@ class _NamePage extends State<NamePage> {
           elevation: 10,
           child: Column(
             children: <Widget>[
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(26.0),
                 child: TextField(
+                  controller: nameInput,
                   style: TextStyle(fontSize: 30),
                   decoration: InputDecoration(
                     icon: Icon(Icons.people),
@@ -68,7 +71,7 @@ class _NamePage extends State<NamePage> {
                       //print(pickedDate);
                       setState(() {
                         dateInput.text = formateDate;
-                        bill.dateTime = formateDate;
+                        bill.date = formateDate;
                       });
                     }
                   },
@@ -81,10 +84,12 @@ class _NamePage extends State<NamePage> {
                   child: ElevatedButton(
                       style: style,
                       onPressed: () {
+                        bill.custName = nameInput.text;
+                        bill.date=dateInput.text;
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => itemAddPage()));
+                                builder: (context) => itemAddPage(billDetails: bill)));
                       },
                       child: const Text("Next")),
                 ),
