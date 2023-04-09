@@ -1,16 +1,11 @@
-# billbook
+# Billbook
 
 A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+It is a simple Flutter Application that is designed to create bills for small business. It is designed for people who could not afford large billing software which could cost large amount of money and a desktop device.
 
-A few resources to get you started if this is your first Flutter project:
+Bill book is android application secifically designed for portable use. It is generic app which does not contain any brand specific details such as logo, trademark, slogan. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+If you wish you to customize it for your business, you can.  I am making it publicaly available for everyone to use.
